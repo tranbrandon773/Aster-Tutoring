@@ -117,8 +117,7 @@ public class hw9 {
        // System.out.println(arr.toString());
        // System.out.println(problem5(arr));
 
-       //String str = "hello";
-
+       //String str = "hello brother";
         //System.out.println(problem4(str));
 
         //System.out.println(problem6(54321, 999));
