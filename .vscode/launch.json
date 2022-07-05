@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Number",
+            "request": "launch",
+            "mainClass": "Number",
+            "projectName": "Aster Tutoring_cd805ca4"
+        },
+        {
+            "type": "java",
+            "name": "Launch dog",
+            "request": "launch",
+            "mainClass": "dog",
+            "projectName": "Aster Tutoring_cd805ca4"
+        },
+        {
+            "type": "java",
+            "name": "Launch lesson2",
+            "request": "launch",
+            "mainClass": "lesson2",
+            "projectName": "Aster Tutoring_cd805ca4"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch hw1",
+            "request": "launch",
+            "mainClass": "hw1",
+            "projectName": "Aster Tutoring_cd805ca4"
+        },
+        {
+            "type": "java",
+            "name": "Launch lesson1",
+            "request": "launch",
+            "mainClass": "lesson1",
+            "projectName": "Aster Tutoring_cd805ca4"
+        }
+    ]
+}
