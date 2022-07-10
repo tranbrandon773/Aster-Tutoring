@@ -26,6 +26,7 @@ public class hw10comp{
         int revNum = 0;
         int currDig;
         
+        //add last digit of n to revNum then multiply by 10 each loop, i.e. n = 123, revNum = 3*10, 30+2*10, 32+1*10
         while (n > 0){
 
             revNum*=10;
@@ -42,7 +43,7 @@ public class hw10comp{
         return revNum == num;
     }
 
-    //Helper function for nthPalindromicPrime(int n)
+    //Helper function for nthPalindromicPrime(int n) and isSemiPrime(int n)
     public static boolean isPrime(int n){
 
         if (n <= 1) {
@@ -84,10 +85,12 @@ public class hw10comp{
         int found = 0;
         int guess = 0;
 
+        //standard nth something loop
         while (found <= n){
 
             guess++;
 
+            //keep checking if guess is prime and palindromic
             if (isPrime(guess) && isPalindromicNumber(guess)){
 
                 found++;
@@ -153,6 +156,7 @@ public class hw10comp{
 
         n = Math.abs(n);
 
+        //covers case if n is a single digit long, longest run can only be that digit
         if(n/10 == 0){ return n;}
 
         int currDig;
@@ -161,6 +165,7 @@ public class hw10comp{
         int maxCount = -1;
         int maxDig = -1;
 
+        //update currDig and oldDig every iteration
         while(n > 0){
 
             currDig = n%10;
@@ -169,21 +174,23 @@ public class hw10comp{
 
                 count++;
 
+                //constantly update maxCount to cover case of n is one single consecutive run
                 if(count > maxCount){
 
                     maxCount = count;
                     maxDig = oldDig;
                 }
 
+                //ties go to smaller digit
                 else if(count == maxCount && oldDig < maxDig){
 
-                
                     maxDig = oldDig;
                 }
             }
  
             else{
 
+                //reset count if currDig and oldDig don't match
                 count = 1;
             }
 
@@ -208,6 +215,7 @@ public class hw10comp{
             return dig*dig + sumOfSquaresOfDigits(n/10);
         }*/
 
+        //easier to use iteration, i believe its faster than recursion too, but your solution works perfectly fine good job
         int sum = 0;
 
         while(n > 0){
@@ -250,6 +258,7 @@ public class hw10comp{
     
        if(n < 0){ return false;}
 
+        //only going up to/starting at n/2 since we only care about factors that aren't n and 1 
         for(int i = n/2; i > 0; i--){
 
             for(int j = 0; j < n/2; j++){
