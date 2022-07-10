@@ -1,10 +1,13 @@
 import java.util.ArrayList;
+import java.lang.Math;
 
-public class hw10{
+public class hw10comp{
     
     //Write the function isPalindromicNumber(n) that takes a non-negative int n and returns true if that number is palindromic and false otherwise, where a palindromic number is the same forwards as backwards. For example, these numbers are palindromic: 0, 1, 99, 12321, 123321, and these numbers are not: 1211, 112, 10010.
     public static boolean isPalindromicNumber(int n){
-        String num = Integer.toString(n);
+
+        /*String num = Integer.toString(n);
+
         String revNum = "";
 
         for(int i = 0; i < num.length(); i++){
@@ -17,13 +20,51 @@ public class hw10{
 
         else{
             return false;
+        }*/
+    
+        int num = n;
+        int revNum = 0;
+        int currDig;
+        
+        while (n > 0){
+
+            revNum*=10;
+        
+            currDig = n%10;
+
+
+            revNum+=currDig;
+
+            n/=10;
+
         }
+
+        return revNum == num;
     }
+
+    //Helper function for nthPalindromicPrime(int n)
+    public static boolean isPrime(int n){
+
+        if (n <= 1) {
+
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+
+            if (n % i == 0) {
+
+                return false;
+            }
+        }
+
+        return true;
+ }
 
     //Write the function nthPalindromicPrime(n) where a palindromic prime is a number that is both palindromic and prime. So nthPalindromicPrime(0) returns 2, and nthPalindromicPrime(10) returns 313.
     public static int nthPalindromicPrime(int n){ 
 
-        int i = 0;
+        /*int i = 0;
         int num = 1;
         
         while(i < n+1){
@@ -38,13 +79,31 @@ public class hw10{
                 i++;
             }
         }
-        return num;
+        return num;*/
+   
+        int found = 0;
+        int guess = 0;
+
+        while (found <= n){
+
+            guess++;
+
+            if (isPrime(guess) && isPalindromicNumber(guess)){
+
+                found++;
+            }
+
+            
+ 
+        }
+
+        return guess;
     }
 
     //Write the function longestDigitRun(n) that takes a possibly-negative int value n and returns the digit that has the longest consecutive run, or the smallest such digit if there is a tie. So, longestDigitRun(117773732) returns 7 (because there is a run of 3 consecutive 7"s), as does longestDigitRun(-677886).
     public static int longestDigitRun(int n){
         
-        int oldDig = 999;
+        /*int oldDig = 999;
         int currDig;
         int consec = 0;
         n = Math.abs(n);
@@ -90,26 +149,82 @@ public class hw10{
         if(greaterEle == count.get(tieInstance)){
             return Math.min(digits.get(greater), digits.get(tieInstance));
         }
-        return digits.get(greater);
+        return digits.get(greater);*/
+
+        n = Math.abs(n);
+
+        if(n/10 == 0){ return n;}
+
+        int currDig;
+        int count = 1;
+        int oldDig = -1;
+        int maxCount = -1;
+        int maxDig = -1;
+
+        while(n > 0){
+
+            currDig = n%10;
+
+            if(currDig == oldDig){
+
+                count++;
+
+                if(count > maxCount){
+
+                    maxCount = count;
+                    maxDig = oldDig;
+                }
+
+                else if(count == maxCount && oldDig < maxDig){
+
+                
+                    maxDig = oldDig;
+                }
+            }
+ 
+            else{
+
+                count = 1;
+            }
+
+            oldDig = currDig;
+            n/=10;
+
+        }
+
+        return maxDig;
+
     }
     
     //Write the function sumOfSquaresOfDigits(n) which takes a non-negative integer and returns the sum of the squares of its digits. 
     public static int sumOfSquaresOfDigits(int n){
         
-        int dig;
+        /*int dig;
 
         if(n == 0){return 0;}
 
         else{
             dig = n%10;
             return dig*dig + sumOfSquaresOfDigits(n/10);
+        }*/
+
+        int sum = 0;
+
+        while(n > 0){
+
+            int dig = n%10;
+            sum+=(dig*dig);
+            n/=10;
         }
+
+        return sum;
     }
 
     //Write the function isSemiPrime(n) that takes a non-negative integer and returns true if it is a semi-prime, and false otherwise.
     //https://en.wikipedia.org/wiki/Semiprime
     public static boolean isSemiPrime(int n){
-        int facA = n;
+
+        /*int facA = n;
         int facB = n;
         int facFound = 0;
 
@@ -131,7 +246,22 @@ public class hw10{
         for(int i = 2; i < facB; i++){
             if(facB%i == 0){return false;}
         }
-        return true;
+        return true;*/
+    
+       if(n < 0){ return false;}
+
+        for(int i = n/2; i > 0; i--){
+
+            for(int j = 0; j < n/2; j++){
+
+                if((isPrime(i) && isPrime(j)) && (i*j==n)){
+
+                    return true;
+                }
+            }
+        }
+        
+        return false;
     }
 
     public static void testAll(){
