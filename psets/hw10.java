@@ -1,5 +1,5 @@
 public class hw10{
-    //hello
+
     //Write the function isPalindromicNumber(n) that takes a non-negative int n and returns true if that number is palindromic and false otherwise, where a palindromic number is the same forwards as backwards. For example, these numbers are palindromic: 0, 1, 99, 12321, 123321, and these numbers are not: 1211, 112, 10010.
     public static boolean isPalindromicNumber(int n){
 

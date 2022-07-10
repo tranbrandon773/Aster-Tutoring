@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.util.ArrayList;
 
 public class hw10{
@@ -23,6 +22,7 @@ public class hw10{
 
     //Write the function nthPalindromicPrime(n) where a palindromic prime is a number that is both palindromic and prime. So nthPalindromicPrime(0) returns 2, and nthPalindromicPrime(10) returns 313.
     public static int nthPalindromicPrime(int n){ 
+
         int i = 0;
         int num = 1;
         
@@ -43,6 +43,7 @@ public class hw10{
 
     //Write the function longestDigitRun(n) that takes a possibly-negative int value n and returns the digit that has the longest consecutive run, or the smallest such digit if there is a tie. So, longestDigitRun(117773732) returns 7 (because there is a run of 3 consecutive 7"s), as does longestDigitRun(-677886).
     public static int longestDigitRun(int n){
+        
         int oldDig = 999;
         int currDig;
         int consec = 0;
@@ -90,32 +91,11 @@ public class hw10{
             return Math.min(digits.get(greater), digits.get(tieInstance));
         }
         return digits.get(greater);
-=======
-public class hw10{
-    //hello
-    //Write the function isPalindromicNumber(n) that takes a non-negative int n and returns true if that number is palindromic and false otherwise, where a palindromic number is the same forwards as backwards. For example, these numbers are palindromic: 0, 1, 99, 12321, 123321, and these numbers are not: 1211, 112, 10010.
-    public static boolean isPalindromicNumber(int n){
-
-        return true;
-    }
-
-    //Write the function nthPalindromicPrime(n) where a palindromic prime is a number that is both palindromic and prime. So nthPalindromicPrime(0) returns 2, and nthPalindromicPrime(10) returns 313.
-    public static int nthPalindromicPrime(int n){
-
-        return 42;
-    }
-
-    //herjrrj edit demo
-    //Write the function longestDigitRun(n) that takes a possibly-negative int value n and returns the digit that has the longest consecutive run, or the smallest such digit if there is a tie. So, longestDigitRun(117773732) returns 7 (because there is a run of 3 consecutive 7"s), as does longestDigitRun(-677886).
-    public static int longestDigitRun(int n){
-
-        return 42;
->>>>>>> 575fb25c8e188843044cbe70f7f745ebb8065713
     }
     
     //Write the function sumOfSquaresOfDigits(n) which takes a non-negative integer and returns the sum of the squares of its digits. 
     public static int sumOfSquaresOfDigits(int n){
-<<<<<<< HEAD
+        
         int dig;
 
         if(n == 0){return 0;}
@@ -124,16 +104,11 @@ public class hw10{
             dig = n%10;
             return dig*dig + sumOfSquaresOfDigits(n/10);
         }
-=======
-
-        return 42;
->>>>>>> 575fb25c8e188843044cbe70f7f745ebb8065713
     }
 
     //Write the function isSemiPrime(n) that takes a non-negative integer and returns true if it is a semi-prime, and false otherwise.
     //https://en.wikipedia.org/wiki/Semiprime
     public static boolean isSemiPrime(int n){
-<<<<<<< HEAD
         int facA = n;
         int facB = n;
         int facFound = 0;
@@ -156,9 +131,6 @@ public class hw10{
         for(int i = 2; i < facB; i++){
             if(facB%i == 0){return false;}
         }
-=======
-
->>>>>>> 575fb25c8e188843044cbe70f7f745ebb8065713
         return true;
     }
 
