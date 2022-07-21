@@ -5,4 +5,5 @@ public class Animal{
         Rooster Beau = new Rooster(23, 5, "Beau");
         Beau.crow();
     }
+
 }
